@@ -91,7 +91,7 @@ ls -ls /data/BDP1_2023/hg19/
 cd ..  # back to home
 
 # get the query ###########################
-cp /data/BDP1_2022/hg19/myread.fa .
+cp /data/BDP1_2023/hg19/myread.fa .
 ############################################
 
 ############## launch bwa ##################
