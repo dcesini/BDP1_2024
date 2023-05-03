@@ -13,22 +13,31 @@ yum install condor-all
 #CONDOR BASIC CONFIGURATION
 cd
 vim /etc/condor/condor_config
+######################################################################
+#edit the condor_config file according to the guidelines below!!!!
+######################################################################
+
+#Once edited the condor_config file you can proceed with the following commands
 systemctl status condor
 systemctl start condor
 systemctl enable condor
 systemctl status condor
 ps -aux | grep condor
- 
+
 # END - SOME HINTS BELOW
+
 1) Security Group must allow tcp for ports 0 - 65535 from the same security group, i.e.:
  All TCP    TCP      0 - 65535     sg-008742ba0467986fe (aws_condor)
 Security group must allow ping from the same security group, i.e.:
  All    ICMP-IPv4   All    N/A     sg-008742ba0467986fe (aws_condor)
 Security group must allow ssh on port 22 from everywhere as ususal
+
+#you can also allow all traffic (all protocols, all ports) from the same security group
+#######################################################################
  
-##################################
- 
- 
+#GUIDELINES FOR THE CONDOR_CONFIG FILE
+######################################################
+
 #-------------------------------------
 # In the config file add at the end
 # the most important variable is the CONDOR_HOST running the master
