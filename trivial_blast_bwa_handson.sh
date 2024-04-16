@@ -62,6 +62,7 @@ yum install zlib-devel
 ###############################################
 tar -xvf bwa-0.7.15.tar
 cd bwa-0.7.15/
+# applied patch described here: https://github.com/lh3/bwa/commit/2a1ae7b6f34a96ea25be007ac9d91e57e9d32284
 make 
 
 # use your own bwa installation ###########
