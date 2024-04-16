@@ -3,18 +3,16 @@
  yum install nfs-utils rpcbind
  systemctl enable nfs-server
  systemctl enable rpcbind
- systemctl enable nfs-lock
- systemctl enable nfs-idmap
+  
  systemctl start rpcbind
  systemctl start nfs-server
- systemctl start nfs-lock
- systemctl start nfs-idmap
+ 
  systemctl status nfs
  vim /etc/exports
-cat /etc/exports
+ cat /etc/exports
       /data  <destination_host IP - USE the private IP>(rw,sync,no_wdelay)
  
-exportfs -r
+ exportfs -r
  
 #On the client:
  
