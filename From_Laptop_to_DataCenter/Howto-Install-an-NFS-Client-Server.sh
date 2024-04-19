@@ -7,7 +7,7 @@
  systemctl start rpcbind
  systemctl start nfs-server
  
- systemctl status nfs
+ systemctl status nfs-server
  vim /etc/exports
  cat /etc/exports
       /data  <destination_host IP - USE the private IP>(rw,sync,no_wdelay)
