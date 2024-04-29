@@ -28,7 +28,7 @@ condor_status
 
 
 ############################################
-ADVACED: CHANGE THE SLOT TYPE
+ADVACED: CHANGE THE SLOT TYPE : https://htcondor.readthedocs.io/en/latest/admin-manual/ep-policy-configuration.html
 [root@execute ~]# cat /etc/condor/config.d/01-execute.config
 CONDOR_HOST = <the_central_manager_private_IP>
 # For details, run condor_config_val use role:get_htcondor_execute
