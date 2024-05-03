@@ -24,7 +24,9 @@ vim trivial_str_search.py
 ll /data2/BDP1/hg19/ncbi-blast-2.7.1+-1.x86_64.rpm
 # you need to be root
 ################ DO NOT USE THIS VERSION yum localinstall /data2/BDP1/hg19/ncbi-blast-2.7.1+-1.x86_64.rpm ############################
-# USE THIS ONE
+# IF IT WAS INSTALLED REMOVE IT: yum remove ncbi-blast-2.7.1+-1.x86_64
+
+#### USE THIS ONE INSTEAD:
 yum localinstall /data2/BDP1/hg19/ncbi-blast-2.15.0+-3.x86_64.rpm
 ###################################################################################
 
