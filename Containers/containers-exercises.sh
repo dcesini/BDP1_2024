@@ -10,22 +10,13 @@ vim /etc/yum.repos.d/docker-ce.repo
 ##########   Add the following content in the docker-ce-repo file:
 
 [docker-ce-stable]
-name=Docker CE Stable - x86_64
-baseurl=https://download.docker.com/linux/centos/7/x86_64/stable
+name=Docker CE Stable - $basearch
+baseurl=https://download.docker.com/linux/rhel/9/x86_64/stable/
 enabled=1
 gpgcheck=1
-gpgkey=https://download.docker.com/linux/centos/gpg
+gpgkey=https://download.docker.com/linux/rhel/gpg
 
-[centos-extras]
-name=Centos extras - x86_64
-baseurl=http://mirror.centos.org/centos/7/extras/x86_64
-enabled=1
-gpgcheck=0
 #############################################################
-
-#install the epel repo
-wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-yum localinstall epel-release-latest-7.noarch.rpm
 
 #install dependencies (maybe more will be needed, check for errors)
 yum install yum-utils device-mapper-persistent-data lvm2
@@ -33,7 +24,8 @@ yum install container-selinux
 
 # install docker
 yum install docker-ce docker-ce-cli containerd.io
-yum install docker-compose
+wget https://github.com/docker/compose/releases/download/v2.27.0/docker-compose-linux-x86_64
+mv docker-compose-linux-x86_64 docker-compose
 
 #start docker
 systemctl status docker
@@ -79,8 +71,8 @@ docker ps -a
 
 docker login
 docker images
-docker tag 5c2538cecdc2 dcesini/bdp1_2023:ubuntu_with_ping_1.0
-docker push dcesini/bdp1_2023:ubuntu_with_ping_1.0
+docker tag 5c2538cecdc2 dcesini/bdp1_2024:ubuntu_with_ping_1.0
+docker push dcesini/bdp1_2024:ubuntu_with_ping_1.0
 
 ############################################
 ### Bulding docker images using Dockerfiles
