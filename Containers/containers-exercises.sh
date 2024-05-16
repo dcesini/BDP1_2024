@@ -1,5 +1,5 @@
 #######################################
-####### INSTALL DOCKER on a RHEL7.6 VM 
+####### INSTALL DOCKER on a RHEL9.3VM 
 #######################################
 #install vim and wget
 yum install vim wget
