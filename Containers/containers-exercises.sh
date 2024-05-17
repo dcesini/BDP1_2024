@@ -26,6 +26,8 @@ yum install container-selinux
 yum install docker-ce docker-ce-cli containerd.io
 wget https://github.com/docker/compose/releases/download/v2.27.0/docker-compose-linux-x86_64
 mv docker-compose-linux-x86_64 docker-compose
+chmod +x docker-compose
+mv docker-compose /usr/local/bin/
 
 #start docker
 systemctl status docker
