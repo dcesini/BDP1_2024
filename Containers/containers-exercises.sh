@@ -201,18 +201,18 @@ docker system prune
 ##########################################################################
 
 [root@ip-172-31-82-181 blast]# cat Dockerfile
-FROM centos:centos7
-COPY ncbi-blast-2.7.1+-1.x86_64.rpm /
+FROM centos:centos7     # USE RHEL9
+COPY ncbi-blast-2.7.1+-1.x86_64.rpm /             #USE THE UPDATED VERSION
 RUN yum install -y perl
 RUN yum localinstall -y /ncbi-blast-2.7.1+-1.x86_64.rpm
 
-#blastn -db /data/BDP1_2020/hg19/entire_hg19BLAST -query myread.fa -out /blast_output/blast_myread.out
+#blastn -db /data/BDP1/hg19/entire_hg19BLAST -query myread.fa -out /blast_output/blast_myread.out
 
 #CMD ["/bin/bash"]
 
-CMD [ "/bin/bash", "-c", "/usr/bin/blastn -db /data/BDP1_2021/hg19/entire_hg19BLAST -query /fasta_input/myread.fa -out /blast_output/blast_myread.out" ]
+CMD [ "/bin/bash", "-c", "/usr/bin/blastn -db /data/BDP1/hg19/entire_hg19BLAST -query /fasta_input/myread.fa -out /blast_output/blast_myread.out" ]
 
 #####################
 docker run  -v /data/BDP1_2021/hg19/:/data/BDP1_2021/hg19/ -v /root/containers/blast/fasta_input/:/fasta_input -v /root/containers/blast/blast_output:/blast_output centos7_with_blast
-# just an example: there are better wayr to run it passing paramenters, see ENTRYPOINT and CMD in https://docs.docker.com/engine/reference/builder/
+# just an example: there are better ways to run it passing paramenters, see ENTRYPOINT and CMD in https://docs.docker.com/engine/reference/builder/
 #################################################
